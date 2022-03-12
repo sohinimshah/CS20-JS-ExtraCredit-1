@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body {
+            background-color: #cef2da;
+            font-family: Verdana, sans-serif;
+            text-align: center;
+        }
+    </style>
+    <head>
+        <meta charset="utf-8">
+        <title>JS Extra Credit Part 1</title>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script language="javascript">
+            window.onload= function() {
+                document.getElementById("jumpButton").onclick=
+                    function() {
+                        message1 = document.getElementById("firstBox").value;
+                        message2 = document.getElementById("secondBox").value;
+                        if (message1 == "") {
+                            document.getElementById("firstBox").value = message2;
+                            document.getElementById("secondBox").value = "";
+                            $(this).html('JUMP >');
+                        } else { //first box has content, JUMP >
+                            document.getElementById("secondBox").value = message1;
+                            document.getElementById("firstBox").value = "";
+                            $(this).html('JUMP <');
+                        }
+                    }
+            }
+        </script>
+    </head>
+    <body>
+        <h1>JS Extra Credit Part 1</h1>
+        <form>
+            <label for="firstVal"></label>
+            <input type="text" id="firstBox" name="firstBox" value="abc">
+            <button type="button" id="jumpButton" name="JUMP >" value="JUMP >">JUMP ></button>
+            <label for="secondBox"></label>
+            <input type="text" id="secondBox" name="secondBox" value="">
+        </form>
+    </body>
+</html>
